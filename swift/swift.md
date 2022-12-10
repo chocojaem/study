@@ -1,0 +1,54 @@
+# Swift
+
+- Framework
+    - `Foundation`
+        - Foundation Framework는 데이터 저장 및 지속성, 텍스트 처리, 날짜 및 시간 계산, 정렬 및 필터링, 네트워킹을 포함한 애플리케이션 및 프레임워크의 기본 기능 계층을 제공
+- Grammer
+    - `var` / `let`
+        - `var`: 변수, 변경 가능
+        - `let`: 상수, 변경 불가능
+            - 컴파일러가 최적화를 진행하여 실행속도가 빨라짐
+            - 실수로 값이 변경되는것으로부터 보호
+    - Optinal
+        - Swift가 가지고 있는 가장 큰 특징 중 하나
+        - 값이 있을 수도 있고 없을 수도 있는 것을 나타냄 → Nullable
+        - 옵셔널 바인딩(Optional Binding)
+            - `if` (`let` 또는 `var` )`input`과 같은 형태로 `input` 값이 `nil`인지를 체크하고 `nil`일 경우 블록을 실행하지 않음
+    - 클로저 (Closures)
+        - Named Closure
+            - 일반 함수
+        - UnNamed Closure
+            - 익명 함수 (EX: `func hi(){ print(”hi”) }` → `{ print(”hi”) }`)
+    - 고차함수
+        - 다른 함수를 인자로 받거나 함수 실행의 결과를 함수로 반환하는 함수
+        - 사용대상
+            - `Array`, `Dictionary`, `Set`등
+        - 사용 이유
+            - `for in` 구문에 비해 코드의 간결성 증가
+            - 코드 재사용, 컴파일러 최적화 측면에서 성능 향상
+        - `map`
+            - 자신을 호출할 때 매개변수로 전달된 함수를 실행하고 그 결과를 반환 → 기존 데이터 변형
+            - `Array.map{print($0)}` →`for in` 같이 배열에 접근하여 각 인덱스를 출력
+        - `filter`
+            - 컨테이너 값을 특정 조건에 맞게 걸러냄
+            - 매개변수로 전달되는 클로저의 리턴타입은 `Bool`형
+        - `reduce`
+            - Closure에 따라 기존 컨테이너의 요소를 결합한 결과를 반환
+            - `Array.reduce(0,+)` → `for in` 과 같이 0번 인덱스부터 시작해 배열의 합을 구하여 반환
+- Method
+    - `readLine`
+        - 입력값을 한줄 읽어오는 함수
+        - 반환형: `String?`
+    - `Array.count`
+        - 배열의 길이를 반환
+    - `components`
+        - 문자열을 쪼개기 위해 사용
+        - split과의 차이점
+            - `split`은 Swift Standard Library에 포함되어 있어 `import` 없이 사용할 수 있지만 `components`
+            는 `Foundation`을 `import` 해야 사용 가능
+            - `components`의 반환형은 `Array<String>`, `split`의 반환형은 `Array<Substring>`
+    - `split`
+        - `components`의 인자값은 `separatedBy` 하나인 반면, `split`은 `separator`,`maxSplits`,`omittingEmptySubsequences`총 3개로 구성됨
+        - `separator`: 특정 문자를 기준으로 문자열을 쪼갬
+        - `maxSplit` : 콜렉션을 분할하는 최대 횟수
+        - `omittingEmptySubsequences` : `false`의 경우 `separator`의 인스턴스마다 결과에 빈(empty) `Subsequences`를 돌려주고, `true`의 경우 비어있지 않은(non-empty) `Subsequences`만 반환
