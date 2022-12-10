@@ -1,3 +1,3 @@
 # Study
 - Swift
-- kotlin
+- Kotlin
