@@ -1,1 +1,3 @@
-# study
+# Study
+- Swift
+- kotlin
